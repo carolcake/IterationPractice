@@ -1,0 +1,68 @@
+// Caroline Hsu - 10/23/20
+/* This program will prompt the user to enter 10 values and the program must
+detect the smallest integer value and the largest integer value. This program
+uses a while loop.
+
+import scanner and declare class and string args
+declare variables and scanner
+prompt the user to enter an integer value and save it as largest and smallest
+start while loop for everything less than series of 10
+and ask user to input value for a number
+start if statement if it's smaller than the original value inputed
+	if it is, assign the value to the smallest
+start else if statement if it's larger than the original value inputed
+	if it is, assign the value to the largest
+add a step to the counter (loop control variable)
+print the result for the user (smallest and largest values) */
+// import scanner and declare class
+import java.util.Scanner;
+public class HiLoWhile
+{
+	public static void main(String[] args)
+	{
+		// declare variables and declare a variable of type Scanner
+		Scanner input = new Scanner(System.in);
+		int counter = 1;
+		final int SERIES = 10;
+		final int STEP = 1;
+		int aNumber;
+		int smallest;
+		int largest;
+		
+		/* prompt the user to enter the first integer value and assign the 
+		smallest value and largest value to that number (because if the same 
+		number is entered it will be the largest and smallest value)*/
+		System.out.print("Enter your first integer value: ");
+		aNumber = input.nextInt();
+		smallest = aNumber;
+		largest = aNumber;
+		
+		/* do a while loop for while the counter is less than the series (we have
+		already prompted the user to enter one value so there is no equal to) */
+		while (counter < SERIES)
+		{
+			System.out.print("Please enter another value: ");
+			aNumber = input.nextInt();
+			/* if statement for if the new number entered is less than the smallest
+			value (which was the first value entered) */
+			if (aNumber < smallest)
+			{ 
+				// if the statement is true, assign the value to smallest
+				smallest = aNumber;
+			}
+			/* else if statement for if the number entered is greater than the
+			largest value (still the first value entered and saved) */
+			else if (aNumber > largest)
+			{
+				// if the statement is true, assign the value to largest
+				largest = aNumber;
+			}
+			// this is the loop control variable and adds one step
+			counter = counter + STEP;
+		}
+		
+		// print the smallest and largest values for the user
+		System.out.println("Your smallest value is: " + smallest);
+		System.out.println("Your largest value is: " + largest);
+	}
+}
